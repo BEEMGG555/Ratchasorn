@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สินค้าใหม่ - รองเท้า</title>
+  <!-- 1. โหลด Bootstrap CSS ให้สมบูรณ์ -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    /* คุมขนาดรูปภาพบนการ์ดให้เท่ากันแถวละ 4 ชิ้น */
+    .card-img-custom { height: 180px; object-fit: cover; }
+    .title-line { width: 60px; border-top: 3px solid #0d6efd; opacity: 1; }
+    /* ปรับรูปในป๊อปอัพให้พอดีและสวยงาม */
+    .modal-img { max-height: 350px; object-fit: cover; width: 100%; }
+    /* เพิ่มเงาบางๆ และเอฟเฟกต์การวางเมาส์ให้การ์ดดูมีมิติ */
+    .card { shadow: 0 2px 5px rgba(0,0,0,0.08); border: none; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold text-dark">รองเท้ามาใหม่</h2>
+    <hr class="mx-auto title-line">
+  </div>
+
+  <!-- สินค้าทั้ง 4 ชิ้นเรียงอยู่ในแถวเดียวกันบนจอคอมพิวเตอร์ -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+    
+    <!-- รองเท้าชิ้นที่ 1 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="C:\xampp\htdocs\MybootstepGuard\Image\รองเท้าผ้าใบแฟชั่น.jpg" class="card-img-top card-img-custom" alt="รองเท้าผ้าใบสีขาว">
+        <div class="card-body p-3">
+          <h5 class="card-title fw-bold text-dark mb-2">รองเท้าผ้าใบแฟชั่น</h5>
+          <p class="card-text text-muted small">รองเท้าผ้าใบสีขาว ดีไซน์มินิมอล ใส่สบายได้ทุกวัน</p>
+          <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal1">ดูรายละเอียด</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- รองเท้าชิ้นที่ 2 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="C:\xampp\htdocs\MybootstepGuard\Image\รองเท้าวิ่งออกกำลังกาย.avif" class="card-img-top card-img-custom" alt="รองเท้าวิ่ง">
+        <div class="card-body p-3">
+          <h5 class="card-title fw-bold text-dark mb-2">รองเท้าวิ่งออกกำลังกาย</h5>
+          <p class="card-text text-muted small">รองเท้าวิ่งน้ำหนักเบา รองรับแรงกระแทกได้ดีเยี่ยม</p>
+          <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal2">ดูรายละเอียด</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- รองเท้าชิ้นที่ 3 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="C:\xampp\htdocs\MybootstepGuard\Image\รองเท้าหนังคัทชู.jpeg" class="card-img-top card-img-custom" alt="รองเท้าหนัง">
+        <div class="card-body p-3">
+          <h5 class="card-title fw-bold text-dark mb-2">รองเท้าหนังคัทชู</h5>
+          <p class="card-text text-muted small">รองเท้าหนังวัวแท้ ทรงสวย เนี๊ยบ เหมาะสำหรับใส่ออกงาน</p>
+          <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal3">ดูรายละเอียด</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- รองเท้าชิ้นที่ 4 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="C:\xampp\htdocs\MybootstepGuard\Image\รองเท้าแตะรัดส้น.jpg" class="card-img-top card-img-custom" alt="รองเท้าแตะ">
+        <div class="card-body p-3">
+          <h5 class="card-title fw-bold text-dark mb-2">รองเท้าแตะรัดส้น</h5>
+          <p class="card-text text-muted small">รองเท้าแตะสายรัดสุดลุย กันน้ำ แห้งไว เหมาะกับหน้าฝน</p>
+          <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal4">ดูรายละเอียด</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= ป๊อปอัพ (Modal) ของรองเท้าชิ้นที่ 1 ================= -->
+<div class="modal fade" id="productModal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0">
+        <h3 class="modal-title fw-bold">รองเท้าผ้าใบแฟชั่น</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="C:\xampp\htdocs\MybootstepGuard\Image\รองเท้าผ้าใบแฟชั่น.jpg" class="modal-img mb-4 rounded shadow-sm" alt="...">
+        <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+        <p class="fs-5 text-secondary">รองเท้าผ้าใบสีขาวผลิตจากผ้าแคนวาสเนื้อดี ระบายอากาศได้ยอดเยี่ยม พื้นรองเท้าทำจากยางพาราแท้ ยึดเกาะพื้นผิวได้ดี ไม่ลื่น แมตช์เข้าได้กับทุกชุด</p>
+        <p class="text-danger fw-bold display-6 mt-4">ราคา: 1,290 บาท</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+        <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ป๊อปอัพ (Modal) ของรองเท้าชิ้นที่ 2 ================= -->
+<div class="modal fade" id="productModal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0">
+        <h3 class="modal-title fw-bold">รองเท้าวิ่งออกกำลังกาย</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="C:\xampp\htdocs\MybootstepGuard\Image\รองเท้าวิ่งออกกำลังกาย.avif" class="modal-img mb-4 rounded shadow-sm" alt="...">
+        <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+        <p class="fs-5 text-secondary">ออกแบบมาเพื่อนักวิ่งโดยเฉพาะ ด้วยเทคโนโลยีโฟมสูตรพิเศษช่วยคืนพลังงานในทุกก้าวที่ลงน้ำหนัก หน้าผ้าถักทอแบบพิเศษยืดหยุ่นสูงและกระชับรูปเท้า</p>
+        <p class="text-danger fw-bold display-6 mt-4">ราคา: 2,500 บาท</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+        <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ป๊อปอัพ (Modal) ของรองเท้าชิ้นที่ 3 ================= -->
+<div class="modal fade" id="productModal3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0">
+        <h3 class="modal-title fw-bold">รองเท้าหนังคัทชู</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="C:\xampp\htdocs\MybootstepGuard\Image\รองเท้าหนังคัทชู.jpeg" class="modal-img mb-4 rounded shadow-sm" alt="...">
+        <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+        <p class="fs-5 text-secondary">คัทชูหนังแท้เกรดพรีเมียม ผ่านการฟอกอย่างประณีตเพื่อให้สัมผัสที่นุ่มนวลและไม่กัดเท้า ซับในซับเหงื่อได้ดีเยี่ยม เหมาะทั้งใส่ทำงานและออกงานสังคม</p>
+        <p class="text-danger fw-bold display-6 mt-4">ราคา: 3,200 บาท</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+        <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ป๊อปอัพ (Modal) ของรองเท้าชิ้นที่ 4 ================= -->
+<div class="modal fade" id="productModal4" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0">
+        <h3 class="modal-title fw-bold">รองเท้าแตะรัดส้น</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="C:\xampp\htdocs\MybootstepGuard\Image\รองเท้าแตะรัดส้น.jpg" class="modal-img mb-4 rounded shadow-sm" alt="...">
+        <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+        <p class="fs-5 text-secondary">รองเท้าแตะสไตล์เอาท์ดอร์ สายรัดไนลอนปรับระดับได้ตามความกระชับของเท้า แห้งไว ไม่อับชื้น เหมาะสำหรับกิจกรรมทางน้ำและการเดินทางท่องเที่ยว</p>
+        <p class="text-danger fw-bold display-6 mt-4">ราคา: 890 บาท</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+        <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. โหลด Bootstrap JavaScript เวอร์ชันเต็ม เพื่อให้ป๊อปอัพทำงานได้จริง -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

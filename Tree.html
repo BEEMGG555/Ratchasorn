@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สินค้าใหม่</title>
+  <!-- 1. โหลด Bootstrap CSS ให้สมบูรณ์ -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    /* ปรับความสูงรูปภาพบนการ์ดให้ใหญ่ขึ้นเต็มตา (จาก 200px เป็น 280px) */
+    .card-img-custom { height: 280px; object-fit: cover; }
+    .title-line { width: 100px; border-top: 4px solid #0d6efd; opacity: 1; }
+    /* ปรับความสูงรูปภาพในป๊อปอัพให้ใหญ่ขึ้น (จาก 300px เป็น 400px) */
+    .modal-img { max-height: 400px; object-fit: cover; width: 100%; }
+    /* เพิ่มเงาและขนาดให้การ์ดดูมีมิติและใหญ่ขึ้นเล็กน้อย */
+    .card { shadow: 0 4px 8px rgba(0,0,0,0.1); border: none; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="text-center mb-5">
+    <!-- ปรับหัวข้อใหญ่ขึ้นเป็น fs-1 -->
+    <h1 class="fw-bold text-dark display-5">สินค้าใหม่</h1>
+    <hr class="mx-auto title-line">
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    <!-- สินค้าชิ้นที่ 1 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="Image/ba757a6a-8202-46cd-b699-f22eab5a32de.jpg" class="card-img-top card-img-custom" alt="สินค้าชิ้นที่ 1">
+        <div class="card-body p-4"> <!-- เพิ่ม padding ข้างในการ์ดให้กว้างขึ้น -->
+          <h4 class="card-title fw-bold text-dark mb-3">สินค้าชิ้นที่ 1</h4>
+          <p class="card-text text-muted fs-5">รายละเอียดสินค้าชิ้นที่ 1</p>
+          <button class="btn btn-primary w-100 py-2 fs-5 mt-3" data-bs-toggle="modal" data-bs-target="#productModal1">ดูรายละเอียด</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- สินค้าชิ้นที่ 2 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="Image/unnamed.jpg" class="card-img-top card-img-custom" alt="สินค้าชิ้นที่ 2">
+        <div class="card-body p-4">
+          <h4 class="card-title fw-bold text-dark mb-3">สินค้าชิ้นที่ 2</h4>
+          <p class="card-text text-muted fs-5">รายละเอียดสินค้าชิ้นที่ 2 </p>
+          <button class="btn btn-primary w-100 py-2 fs-5 mt-3" data-bs-toggle="modal" data-bs-target="#productModal2">ดูรายละเอียด</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- สินค้าชิ้นที่ 3 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="Image/bon.jpg" class="card-img-top card-img-custom" alt="สินค้าชิ้นที่ 3">
+        <div class="card-body p-4">
+          <h4 class="card-title fw-bold text-dark mb-3">สินค้าชิ้นที่ 3</h4>
+          <p class="card-text text-muted fs-5">รายละเอียดสินค้าชิ้นที่ 3</p>
+          <button class="btn btn-primary w-100 py-2 fs-5 mt-3" data-bs-toggle="modal" data-bs-target="#productModal3">ดูรายละเอียด</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= ป๊อปอัพ (Modal) ของสินค้าชิ้นที่ 1 [ปรับเป็น modal-lg ให้กว้างขึ้น] ================= -->
+<div class="modal fade" id="productModal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0">
+        <h3 class="modal-title fw-bold">สินค้าชิ้นที่ 1 ต้นบอนไซ</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="Image/ba757a6a-8202-46cd-b699-f22eab5a32de.jpg" class="modal-img mb-4 rounded shadow-sm" alt="...">
+        <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+        <p class="fs-5 text-secondary">ข้อมูลสินค้าชิ้นที่ 1 แบบละเอียด ยินดีต้อนรับสู่ข้อมูลเชิงลึกของต้นไม้ชิ้นนี้</p>
+        <p class="text-danger fw-bold display-6 mt-4">ราคา: xxx บาท</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+        <a href="#" class="btn btn-success px-5 py-2 fs-5fw-bold">สั่งซื้อสินค้า</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ป๊อปอัพ (Modal) ของสินค้าชิ้นที่ 2 ================= -->
+<div class="modal fade" id="productModal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0">
+        <h3 class="modal-title fw-bold">สินค้าชิ้นที่ 2 ต้นกระบองเพชร</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="Image/unnamed.jpg" class="modal-img mb-4 rounded shadow-sm" alt="...">
+        <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+        <p class="fs-5 text-secondary">ข้อมูลสินค้าชิ้นที่ 2 แบบละเอียด ยินดีต้อนรับสู่ข้อมูลเชิงลึกของต้นไม้ชิ้นนี้</p>
+        <p class="text-danger fw-bold display-6 mt-4">ราคา: xxx บาท</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+        <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ป๊อปอัพ (Modal) ของสินค้าชิ้นที่ 3 ================= -->
+<div class="modal fade" id="productModal3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0">
+        <h3 class="modal-title fw-bold">สินค้าชิ้นที่ 3 ต้นบอนสี</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="Image/bon.jpg" class="modal-img mb-4 rounded shadow-sm" alt="...">
+        <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+        <p class="fs-5 text-secondary">ข้อมูลสินค้าชิ้นที่ 3 แบบละเอียด ยินดีต้อนรับสู่ข้อมูลเชิงลึกของต้นไม้ชิ้นนี้</p>
+        <p class="text-danger fw-bold display-6 mt-4">ราคา: xxx บาท</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+        <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. โหลด Bootstrap JavaScript เวอร์ชันเต็ม เพื่อให้ป๊อปอัพทำงานได้จริง -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
