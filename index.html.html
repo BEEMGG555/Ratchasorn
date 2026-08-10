@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>อุปกรณ์ตู้ปลาและสัตว์เลี้ยงน้ำ - AquaStore</title>
+  
+  <!-- โหลด Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    .card-img-custom { 
+      height: 180px; 
+      object-fit: cover; 
+    }
+    .title-line { 
+      width: 60px; 
+      border-top: 3px solid #0d6efd; 
+      opacity: 1; 
+    }
+    .modal-img { 
+      max-height: 350px; 
+      object-fit: cover; 
+      width: 100%; 
+    }
+    .card { 
+      border: none; 
+      transition: transform 0.2s; 
+    }
+    .card:hover { 
+      transform: translateY(-3px); 
+    }
+
+    /* ตกแต่งรูปใน Carousel ให้ความสูงสม่ำเสมอและไม่เบี้ยว */
+    .carousel-item img {
+      height: 380px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">AquaStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fs-5">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">หน้าแรก</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">สินค้า</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">ติดต่อ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">บัญชีผู้ใช้</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel (ใต้ Navbar) -->
+  <div class="container mt-4 mb-2">
+    <div style="max-width: 850px; margin: 0 auto;">
+      <div id="heroCarousel" class="carousel slide shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="ตู้ปลา/cn-11134207-7r98o-lyetin051b4y06.jpg" class="d-block w-100" alt="โปรโมชั่นตู้ปลา">
+          </div>
+          <div class="carousel-item">
+            <img src="ตู้ปลา/เตรื่องให้อาหาร.jpg" class="d-block w-100" alt="อุปกรณ์ตู้ปลา">
+          </div>
+          <div class="carousel-item">
+            <img src="ตู้ปลา/onf-flat-nano-01.jpg" class="d-block w-100" alt="อาหารปลา">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- เนื้อหาหลัก (รายการสินค้า) -->
+  <div class="container mt-4 mb-5" id="products">
+    
+    <!-- หัวข้อหลัก -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">สินค้าและอุปกรณ์ตู้ปลา</h2>
+      <hr class="mx-auto title-line">
+    </div>
+
+    <!-- แถวที่ 1 (3 ชิ้น) -->
+    <div class="row g-3 mb-3">
+      
+      <!-- ชิ้นที่ 1 -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/cn-11134207-7r98o-lyetin051b4y06.jpg" class="card-img-top card-img-custom" alt="ชุดตู้ปลาสมาร์ท">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">ชุดตู้ปลาอัจฉริยะแบบครบเซ็ต</h5>
+            <p class="card-text text-muted small">รวมตู้ปลากระจกใสทรงสวย พร้อมระบบกรองน้ำในตัวและไฟ LED</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal1">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ชิ้นที่ 2 -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/อาหารปลา.webp" class="card-img-top card-img-custom" alt="อาหารปลา">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">อาหารปลาสูตรเร่งสีเร่งโต</h5>
+            <p class="card-text text-muted small">อาหารปลาชนิดเม็ดลอย โปรตีนสูง ไม่ทำให้น้ำขุ่น</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal2">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ชิ้นที่ 3 -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/รากไม้.jpg" class="card-img-top card-img-custom" alt="ของตกแต่งตู้ปลา">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">ชุดพรรณไม้น้ำและขอนไม้ประดับ</h5>
+            <p class="card-text text-muted small">ขอนไม้ธรรมชาติและไม้น้ำจำลอง สร้างระบบนิเวศจำลอง</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal3">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- แถวที่ 2 (4 ชิ้น) -->
+    <div class="row g-3 mb-3">
+      
+      <!-- ชิ้นที่ 4 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/กรองน้ำ.jpg" class="card-img-top card-img-custom" alt="ระบบกรองนอก">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">ระบบกรองนอกตู้ปลา</h5>
+            <p class="card-text text-muted small">ปั๊มน้ำพร้อมถังกรองชีวภาพ ทำงานเงียบ</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal4">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ชิ้นที่ 5 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/onf-flat-nano-01.jpg" class="card-img-top card-img-custom" alt="โคมไฟไม้น้ำ">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">โคมไฟ LED ไม้น้ำ</h5>
+            <p class="card-text text-muted small">ชิปไฟ WRGB สเปกตรัมสมบูรณ์แบบ</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal5">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ชิ้นที่ 6 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/ออกซิเจน.jpg" class="card-img-top card-img-custom" alt="ปั๊มลมออกซิเจน">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">ปั๊มออกซิเจนเงียบพิเศษ</h5>
+            <p class="card-text text-muted small">ปรับระดับแรงลมได้ ให้ฟองอากาศละเอียด</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal6">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ชิ้นที่ 7 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/ฮีตเตอ.jpg" class="card-img-top card-img-custom" alt="ฮีตเตอร์ตู้ปลา">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">ฮีตเตอร์คุมอุณหภูมิ</h5>
+            <p class="card-text text-muted small">ระบบตัดไฟอัตโนมัติ รักษาน้ำอุ่นคงที่</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal7">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- แถวที่ 3 (4 ชิ้น) -->
+    <div class="row g-3 mb-4">
+      
+      <!-- ชิ้นที่ 8 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/hp.jpg" class="card-img-top card-img-custom" alt="ชุดทดสอบค่าน้ำ">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">ชุดทดสอบค่า pH น้ำ</h5>
+            <p class="card-text text-muted small">วัดค่าน้ำแม่นยำ ป้องกันปลาช็อกน้ำ</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal8">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ชิ้นที่ 9 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/แปรง.jpg" class="card-img-top card-img-custom" alt="แปรงแม่เหล็กขัดกระจก">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">แปรงแม่เหล็กขัดตะไคร่</h5>
+            <p class="card-text text-muted small">ทำความสะอาดกระจกโดยไม่ต้องเปียกมือ</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal9">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ชิ้นที่ 10 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/เตรื่องให้อาหาร.jpg" class="card-img-top card-img-custom" alt="เครื่องให้อาหารปลาอัตโนมัติ">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">เครื่องให้อาหารอัตโนมัติ</h5>
+            <p class="card-text text-muted small">ตั้งเวลาให้อาหารปลาล่วงหน้า สะดวกเวลาไม่อยู่บ้าน</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal10">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ชิ้นที่ 11 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="ตู้ปลา/ช้อน.jpg" class="card-img-top card-img-custom" alt="สวิงช้อนปลา">
+          <div class="card-body p-3">
+            <h5 class="card-title fw-bold text-dark mb-2">สวิงช้อนปลาตาข่ายนุ่ม</h5>
+            <p class="card-text text-muted small">เนื้อนุ่มพิเศษ ไม่ทำให้เกล็ดปลาหลุดร่วง</p>
+            <button class="btn btn-primary w-100 py-2 small mt-2" data-bs-toggle="modal" data-bs-target="#productModal11">ดูรายละเอียด</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ส่วนเลือกหน้า (Pagination) -->
+    <nav aria-label="Page navigation" class="mt-4">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">ย้อนกลับ</a>
+        </li>
+        <li class="page-item active" aria-current="page">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">ถัดไป</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <!-- Modals (1-11) -->
+  <!-- Modal 1 -->
+  <div class="modal fade" id="productModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">ชุดตู้ปลาอัจฉริยะแบบครบเซ็ต</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/cn-11134207-7r98o-lyetin051b4y06.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">รวมตู้ปลากระจกโค้งไร้ขอบ และระบบกรองน้ำเงียบสนิทไว้ในชุดเดียว มาพร้อมไฟ LED ปรับระดับแสงได้ เหมาะสำหรับผู้เริ่มต้น</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 2,490 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="productModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">อาหารปลาสูตรเร่งสีเร่งโต</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/อาหารปลา.webp" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">อุดมด้วยสาหร่ายสไปรูลิน่า ช่วยเร่งสีสันอย่างเป็นธรรมชาติ ไม่ทำให้น้ำเน่าเสียเร็ว</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 180 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="modal fade" id="productModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">ชุดพรรณไม้น้ำและขอนไม้ประดับ</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/รากไม้.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">ขอนไม้ธรรมชาติผ่านการต้มคายสีแล้ว ปลอดภัยต่อสัตว์น้ำทุกชนิด</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 450 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div class="modal fade" id="productModal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">ระบบกรองนอกตู้ปลา</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/กรองน้ำ.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">ถังกรองนอกตู้ประสิทธิภาพสูง บำบัดของเสียและแบคทีเรียได้ดีเยี่ยม</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 1,850 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div class="modal fade" id="productModal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">โคมไฟ LED ไม้น้ำ</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/onf-flat-nano-01.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">แสงสว่างสเปกตรัมเต็มรูปแบบ เหมาะสำหรับเลี้ยงไม้น้ำและเร่งสีปลา</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 890 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div class="modal fade" id="productModal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">ปั๊มออกซิเจนเงียบพิเศษ</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/ออกซิเจน.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">ทำงานเงียบ ไร้เสียงรบกวนในห้องนอน เพิ่มปริมาณออกซิเจนในน้ำอย่างสม่ำเสมอ</p>
+          <p class="text-muted fw-bold display-6 mt-4">สถานะ: สินค้าหมดชั่วคราว</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <button class="btn btn-secondary px-5 py-2 fs-5 fw-bold" disabled>สินค้าหมด</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div class="modal fade" id="productModal7" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">ฮีตเตอร์คุมอุณหภูมิ</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/ฮีตเตอ.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">รักษาระดับอุณหภูมิน้ำให้คงที่ ป้องกันปลาป่วยในช่วงอากาศเย็น</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 520 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div class="modal fade" id="productModal8" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">ชุดทดสอบค่า pH น้ำ</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/hp.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">น้ำยาเช็กกรด-ด่างในน้ำ ใช้งานง่าย อ่านผลได้รวดเร็วและแม่นยำ</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 250 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div class="modal fade" id="productModal9" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">แปรงแม่เหล็กขัดตะไคร่</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/แปรง.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">ขัดคราบตะไคร่น้ำบนกระจกได้ง่ายดาย แรงดูดสูง กระจกไม่เป็นรอย</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 290 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div class="modal fade" id="productModal10" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">เครื่องให้อาหารอัตโนมัติ</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/เตรื่องให้อาหาร.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">ตั้งเวลาให้อาหารได้สูงสุด 4 ครั้งต่อวัน ควบคุมปริมาณการปล่อยอาหารได้แม่นยำ</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 690 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 11 -->
+  <div class="modal fade" id="productModal11" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-header border-0">
+          <h3 class="modal-title fw-bold">สวิงช้อนปลาตาข่ายนุ่ม</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="ตู้ปลา/ช้อน.jpg" class="modal-img mb-4 rounded shadow-sm" alt="รายละเอียดสินค้า">
+          <h4 class="fw-bold mb-3">รายละเอียดสินค้า</h4>
+          <p class="fs-5 text-secondary">ตาข่ายนุ่มพิเศษ ไม่ทำอันตรายต่อผิวและเกล็ดของปลาสวยงาม ด้ามจับแข็งแรง</p>
+          <p class="text-danger fw-bold display-6 mt-4">ราคา: 99 บาท</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary px-4 py-2 fs-5" data-bs-dismiss="modal">ย้อนกลับ</button>
+          <a href="#" class="btn btn-success px-5 py-2 fs-5 fw-bold">สั่งซื้อสินค้า</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer ส่วนท้ายเว็บ -->
+  <footer class="bg-dark text-white pt-5 pb-4 mt-auto" id="contact">
+    <div class="container text-center text-md-start">
+      <div class="row text-center text-md-start">
+        
+        <!-- คอลัมน์ที่ 1: เกี่ยวกับร้าน -->
+        <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 fw-bold text-primary">AquaStore</h5>
+          <p class="text-white-50">
+            ศูนย์รวมอุปกรณ์ตู้ปลา คุณภาพดี ครบวงจร สำหรับผู้รักการเลี้ยงปลาและจัดตู้ไม้น้ำ
+          </p>
+        </div>
+
+        <!-- คอลัมน์ที่ 2: ลิงก์ด่วน -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 fw-bold text-primary">เมนูลัด</h5>
+          <p><a href="#" class="text-white-50 text-decoration-none">หน้าแรก</a></p>
+          <p><a href="#products" class="text-white-50 text-decoration-none">สินค้าทั้งหมด</a></p>
+          <p><a href="#" class="text-white-50 text-decoration-none">เงื่อนไขการส่งสินค้า</a></p>
+        </div>
+
+        <!-- คอลัมน์ที่ 3: ติดต่อเรา -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 fw-bold text-primary">ติดต่อเรา</h5>
+          <p class="text-white-50">📍 ถนนปาท่องโก๋</p>
+          <p class="text-white-50">📧 beemgg04@gmail.com</p>
+          <p class="text-white-50">📞 ###-###-####</p>
+        </div>
+
+      </div>
+
+      <hr class="mb-4">
+
+      <!-- Copyright -->
+      <div class="row align-items-center">
+        <div class="col-md-12 text-center">
+          <p class="text-white-50 mb-0">© 2026 AquaStore. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- โหลด Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
